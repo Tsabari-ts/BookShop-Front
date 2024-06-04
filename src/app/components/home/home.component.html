@@ -1,0 +1,23 @@
+<div class="home-body">
+    <div>
+        <button (click)="GetAllBooks()"> Get All Books</button>
+        <button (click)="AddNewBook()"> Add New Book</button>
+    </div>
+    
+    <div>
+        <label for="bookId">Select Book ID:</label>
+        <select *ngIf="books" id="bookId" [(ngModel)]="selectedBookId" (click)="GetBookId()">
+          <option *ngFor="let book of books.book" [value]="book.isbn">{{ book.isbn }}</option>
+        </select>
+        <button (click)="GetBookDetails()">Get Book Details</button>
+        <button (click)="EditBookDetails()">Edit Book Details</button>
+        <button (click)="DeleteBook()">Delete Book</button>
+    </div>
+    
+    <div class="errorMessage" *ngIf="error">
+        <p>
+    {{errorMessage}}
+        </p>
+    </div>
+    </div>
+    

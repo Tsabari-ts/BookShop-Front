@@ -1,0 +1,45 @@
+.home-body{
+    text-align: center;
+    margin-top: 100px;
+    }
+    
+    div {
+        margin-bottom: 20px;
+      }  
+      
+      button {
+        padding: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      button:hover {
+        background-color: #2980b9;
+      }  
+    
+      label {
+        margin-right: 10px;
+      }
+      
+      select {
+        padding: 8px;
+        border-radius: 5px;
+        width: 150px;
+        margin-right: 50px;
+      }  
+    
+      div[role="alert"] {
+        background-color: #e74c3c;
+        color: #fff;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }  
+      
+      p{
+        color: red;
+      }

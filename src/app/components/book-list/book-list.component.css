@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 80%; 
+    margin: 20px; 
+  }
+  
+  thead {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .message {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+  }
+  

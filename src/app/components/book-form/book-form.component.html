@@ -1,0 +1,104 @@
+
+<div *ngIf="isNewBook else isUpdateBook">
+    <form #myForm="ngForm" (ngSubmit)="AddNewBook(myForm)">
+        <div class="input-container" [class.error]="myForm.submitted && (idInput.invalid || idInput.touched)">
+          <label for="idInput" [ngClass]="{'active': idValue !== 0}">Book ID</label>
+          <input type="number" id="idInput" [(ngModel)]="idValue" name="idInput" required #idInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && idInput.invalid" class="error-message">Book ID is required.</div>
+        </div>
+      
+        <div class="input-container" [class.error]="myForm.submitted && (titleInput.invalid || (titleInput.touched && titleInput.value.length < 2))">
+          <label for="titleInput" [ngClass]="{'active': titleValue !== ''}">Title</label>
+          <input type="text" id="titleInput" [(ngModel)]="titleValue" name="titleInput" required minlength="2" maxlength="15"
+            pattern="[A-Za-z ]*" #titleInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && titleInput.invalid" class="error-message">Title is required.</div>
+        </div>
+      
+        <div class="input-container" [class.error]="myForm.submitted && (authorInput.invalid || (authorInput.touched && authorInput.value.length < 2))">
+          <label for="authorInput" [ngClass]="{'active': authorValue !== ''}">Author</label>
+          <input type="text" id="authorInput" [(ngModel)]="authorValue" name="authorInput" required minlength="2" maxlength="15"
+            pattern="[A-Za-z ]*" #authorInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && authorInput.invalid" class="error-message">Author is required.</div>
+        </div>
+      
+        <div class="input-container" [class.error]="myForm.submitted && (catergoryInput.invalid || catergoryInput.touched)">
+          <label for="catergoryInput" [ngClass]="{'active': catergoryValue !== ''}">Category</label>
+          <input type="text" id="catergoryInput" [(ngModel)]="catergoryValue" name="catergoryInput" required minlength="2" maxlength="20"
+           #catergoryInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && catergoryInput.invalid" class="error-message">Category is required.</div>
+        </div>
+
+        <div class="input-container" [class.error]="myForm.submitted && (coverInput.invalid || coverInput.touched)">
+          <label for="coverInput" [ngClass]="{'active': coverValue !== ''}">Cover</label>
+          <input type="text" id="coverInput" [(ngModel)]="coverValue" name="coverInput" required minlength="2" maxlength="20"
+           #coverInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && coverInput.invalid" class="error-message">Cover is required.</div>
+        </div>
+
+        <div class="input-container" [class.error]="myForm.submitted && (yearInput.invalid || yearInput.touched)">
+          <label for="yearInput" [ngClass]="{'active': yearValue !== 0}">Year</label>
+          <input type="number" id="yearInput" [(ngModel)]="yearValue" name="yearInput" required #yearInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && yearInput.invalid" class="error-message">Year is required.</div>
+        </div>
+
+        <div class="input-container" [class.error]="myForm.submitted && (priceInput.invalid || priceInput.touched)">
+          <label for="priceInput" [ngClass]="{'active': priceValue !== 0}">Price</label>
+          <input type="number" id="priceInput" [(ngModel)]="priceValue" name="priceInput" required #priceInput="ngModel">
+          <div class="underline"></div>
+          <div *ngIf="myForm.submitted && yearInput.invalid" class="error-message">Price is required.</div>
+        </div>
+      
+        <br>
+        <button class="go-setting-button" type="submit" [disabled]="isButtonDisabled">Add new user</button>
+      </form>
+</div>
+
+<ng-template #isUpdateBook>
+    <form #myForm="ngForm" (ngSubmit)="UpdateBook(myForm)">
+        <div class="input-container">
+          <label for="idInput" [ngClass]="{'active': bookData.isbn !== 0}">Book ID</label>
+          <input type="number" id="idInput" [(ngModel)]="bookData.isbn" name="idInput" required [disabled]="true">
+        </div>
+      
+        <div class="input-container">
+          <label for="titleInput" [ngClass]="{'active': bookData.title.value !== ''}">Title</label>
+          <input type="text" id="titleInput" [(ngModel)]="bookData.title.value" name="titleInput" required minlength="2" maxlength="15"
+            pattern="[A-Za-z ]*">
+        </div>
+      
+        <div class="input-container">
+          <label for="authorInput" [ngClass]="{'active': bookData.author !== ''}">Author</label>
+          <input type="text" id="authorInput" [(ngModel)]="bookData.author" name="authorInput" required
+            pattern="[A-Za-z ]*">
+        </div>
+      
+        <div class="input-container">
+          <label for="categoryInput" [ngClass]="{'active': bookData.category !== ''}">Category</label>
+          <input type="text" id="categoryInput" [(ngModel)]="bookData.category" name="categoryInput" required minlength="2" maxlength="20">
+        </div>
+
+        <div class="input-container">
+          <label for="coverInput" [ngClass]="{'active': bookData.cover !== ''}">Cover</label>
+          <input type="text" id="coverInput" [(ngModel)]="bookData.cover" name="coverInput" required minlength="2" maxlength="20">
+        </div>
+
+        <div class="input-container">
+          <label for="yearInput" [ngClass]="{'active': bookData.year !== 0}">Year</label>
+          <input type="number" id="yearInput" [(ngModel)]="bookData.year" name="yearInput" required>
+        </div>
+
+        <div class="input-container">
+          <label for="priceInput" [ngClass]="{'active': bookData.price !== 0}">Price</label>
+          <input type="number" id="priceInput" [(ngModel)]="bookData.price" name="priceInput" required>
+        </div>
+      
+        <br>
+        <button class="go-setting-button" type="submit" [disabled]="isButtonDisabled">Update book</button>
+      </form>
+</ng-template>

@@ -1,0 +1,36 @@
+.book-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 60%; 
+    margin: 20px auto; 
+  }
+  
+  .book-details-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .book-details-paragraph {
+    margin-bottom: 10px;
+  }
+  
+  .book-details-button {
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .book-details-button:hover {
+    background-color: #2980b9;
+  }
+  

@@ -1,0 +1,12 @@
+<div class="dialog-container">
+    <h2 class="dialog-title">Confirmation</h2>
+    <div class="dialog-text">Are you sure you want to delete this book?</div>
+    <div class="dialog-actions">
+      <button class="dialog-button" (click)="CloseDialog()">No</button>
+      <button class="dialog-button" (click)="DeleteAndClose()">Yes</button>
+    </div>
+    <div *ngIf="isDeleteSuccessful">
+        <span class="operation-response">Book deleted successfully</span>
+      </div>
+  </div>
+  

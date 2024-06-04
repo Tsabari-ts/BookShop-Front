@@ -1,0 +1,11 @@
+<div *ngIf="selectedBook" class="book-details-container">
+    <h2 class="book-details-heading">Book Details</h2>
+    <p class="book-details-paragraph"><strong>ID:</strong> {{ selectedBook.isbn }}</p>
+    <p class="book-details-paragraph"><strong>Title:</strong> {{ selectedBook.title.value }}</p>
+    <p class="book-details-paragraph"><strong>Category:</strong> {{ selectedBook.category }}</p>
+    <p class="book-details-paragraph"><strong>Year:</strong> {{ selectedBook.year }}</p>
+    <p class="book-details-paragraph"><strong>Price:</strong> {{ selectedBook.price }}</p>
+    
+    <button class="book-details-button" (click)="EditBookDetails()">Edit Book Details</button>
+    <button class="book-details-button" (click)="DeleteBook()">Delete Book</button>
+</div>
